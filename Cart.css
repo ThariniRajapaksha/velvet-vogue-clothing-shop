@@ -1,0 +1,277 @@
+/* General Reset */
+body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+/* Prevent horizontal overflow */
+html, body {
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    width: 100%; /* Ensures body and html take the full width of the screen */
+    margin: 0; /* Removes any margin that could cause overflow */
+    padding: 0; /* Removes any padding that could cause overflow */
+    min-height: 100vh; /* Ensures body takes full height of viewport */
+    display: flex; /* Ensures content stretches and footer can stick at the bottom */
+    flex-direction: column; /* Stacks elements vertically */
+}
+
+/* Body reset to ensure no padding or margin */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    color: #fff;
+    position: relative; /* Allows positioning of the overlay */
+}
+
+/* Add a dark overlay on top of the background */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensures it stays behind all other content */
+}
+
+/* Header */
+header {
+    background-color: #EE798A;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    margin: 0; /* Remove any margin */
+    position: relative;
+}
+
+/* Fix the header container */
+.header-container {
+    display: flex;
+    justify-content: space-between;  /* Space between logo, menu, and user profile */
+    align-items: center;
+    max-width: 100%; /* Ensure container takes full width */
+    margin: 0 auto; /* Center align */
+    padding: 0 20px; /* Adjust padding as needed */
+    width: 100%; /* Take up full width */
+    box-sizing: border-box; /* Ensure padding doesn't add extra width */
+}
+
+/* Logo Image */
+header .logo {
+    position: absolute; /* Allow precise positioning */
+    top: 50%; /* Center vertically */
+    left: 0; /* Align to the left edge */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    padding-left: 15px; /* Add a small margin from the edge */
+}
+
+header .logo img {
+    height: 120px; /* Adjust logo size */
+    width: auto; /* Maintain aspect ratio */
+    display: block; /* Prevent extra spacing from inline-block behavior */
+}
+
+/* Center the navigation menu */
+nav {
+    flex-grow: 1; /* Allows nav to take the remaining space */
+    display: flex;
+    justify-content: center; /* Ensures the menu is centered */
+}
+
+nav .menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px 10px;
+    display: block;
+}
+
+.menu a:hover {
+    color: #AC001E;
+}
+
+/* Right-aligned user profile */
+.user-profile {
+    margin-left: auto; /* Pushes the user profile to the right */
+}
+
+.user-profile a {
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.user-profile a:hover {
+    color: #AC001E;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    width: 170px;
+}
+
+.dropdown-menu li a {
+    padding: 10px;
+    color: black;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.header-user-info {
+    display: flex;
+    align-items: center;
+}
+
+.header-user-info img.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.cart-container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Table Styling */
+.cart-table {
+    width: 100%;
+    border-collapse: separate;  /* Ensures there are no internal borders */
+    border-spacing: 0; /* Ensures there is no spacing between table cells */
+    border: 1px solid #ddd;  /* Adds the outer border to the table */
+}
+
+.cart-table th, .cart-table td {
+    padding: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.cart-table th {
+    background-color: #050A30;
+    color: white;
+}
+
+.cart-table td {
+    background-color: #f9f9f9;
+    color: #333;
+    border-bottom: 1px solid #ddd; /* Keeps a bottom border for each row for separation */
+}
+
+.cart-summary {
+    text-align: right;
+    font-size: 18px;
+    padding-top: 20px;
+    color: #000;
+}
+
+.cart-summary p {
+    margin: 5px 0;
+}
+
+.cart-summary .checkout-btn {
+    background-color: #050A30;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 16px;
+    border-radius: 20px;
+}
+
+.cart-summary .checkout-btn:hover {
+    background-color: #34495e;
+}
+
+.remove-btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.remove-btn:hover {
+    background-color: #c0392b;
+}
+
+
+/* Footer Styles */
+footer {
+    display: flex;
+    gap: 70px; /* Control the gap between the columns */
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    justify-content: flex-start; /* Align columns to the left */
+    position: relative;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+/* Footer columns */
+.footer-column {
+    text-align: left; /* Align text to the left */
+    padding: 0 10px;
+}
+
+.footer-column img {
+    width: 100px;
+    height: 100px;
+}
+
+.footer-column h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.footer-column a {
+    color: white;
+    display: block;
+    margin: 5px 0; /* Reduced margin between links */
+    font-size: 12px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}

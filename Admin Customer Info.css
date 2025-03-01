@@ -1,0 +1,211 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    background-color: #f0f4f8;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #2d3436;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Logo container */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 60%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Add styles for dropdown menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2d3436;
+    min-width: 200px;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: #f4f6f9;
+    padding: 12px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #ff6f61;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Sidebar items */
+nav ul {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+nav ul li {
+    margin: 12px 0;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border-radius: 20px;
+    background: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+nav ul li a:hover {
+    background: #ff6f61;
+    transform: translateX(5px);
+}
+
+nav ul li a i {
+    font-size: 1.2rem;
+}
+
+/* Footer */
+.footer-bottom {
+    margin-top: auto;
+    text-align: center;
+    color: #cccccc;
+    font-size: 0.7rem;
+}
+
+
+/* Main Content */
+.main-content {
+    margin-left: 270px;
+    padding: 30px;
+    color: #0E86D4;
+    box-shadow: inset 0px -2px 10px rgba(0, 0, 0, 0.05);
+    overflow-y: auto;  /* Add scrolling to the main content area */
+    max-height: calc(100vh - 40px);
+}
+
+/* Futuristic Customer Details Table */
+.table-container {
+    max-height: 550px; /* Adjust this height to suit your needs */
+    max-width: 100%;
+    overflow-y: auto;  /* Vertical scrollbar */
+    overflow-x: auto;  /* Horizontal scrollbar */
+    border: 1px solid #ccc; /* Optional border around the container */
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #222;
+    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.2);
+}
+
+thead {
+    background-color: #333;
+    color: #00ff99; /* Neon green */
+}
+
+thead th {
+    padding: 15px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #00ff99;
+}
+
+tbody td {
+    padding: 12px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #fff;
+    border-bottom: 1px solid #444;
+    transition: background-color 0.3s ease;
+}
+
+tbody tr:hover {
+    background-color: #333;
+    transform: translateX(5px);
+}
+
+tbody td img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+tbody td img:hover {
+    transform: scale(1.2);
+}
+
+tbody td:last-child {
+    border-bottom: none;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+table td, table th {
+    border-right: 1px solid #444;
+}
+
+table td:last-child, table th:last-child {
+    border-right: none;
+}
+
+table caption {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+
+/* Apply glowing effect on table header */
+thead th {
+    animation: glow 1.5s infinite alternate;
+}

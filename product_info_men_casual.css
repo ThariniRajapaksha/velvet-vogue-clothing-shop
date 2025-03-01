@@ -1,0 +1,299 @@
+/* General Reset */
+body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+/* Prevent horizontal overflow */
+html, body {
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    width: 100%; /* Ensures body and html take the full width of the screen */
+    margin: 0; /* Removes any margin that could cause overflow */
+    padding: 0; /* Removes any padding that could cause overflow */
+}
+
+/* Body reset to ensure no padding or margin */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    color: #fff;
+    position: relative; /* Allows positioning of the overlay */
+}
+
+/* Add a dark overlay on top of the background */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensures it stays behind all other content */
+}
+
+/* Header */
+header {
+    background-color: #EE798A;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    margin: 0; /* Remove any margin */
+    position: relative;
+}
+
+/* Fix the header container */
+.header-container {
+    display: flex;
+    justify-content: space-between;  /* Space between logo, menu, and user profile */
+    align-items: center;
+    max-width: 100%; /* Ensure container takes full width */
+    margin: 0 auto; /* Center align */
+    padding: 0 20px; /* Adjust padding as needed */
+    width: 100%; /* Take up full width */
+    box-sizing: border-box; /* Ensure padding doesn't add extra width */
+}
+
+/* Logo Image */
+header .logo {
+    position: absolute; /* Allow precise positioning */
+    top: 50%; /* Center vertically */
+    left: 0; /* Align to the left edge */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    padding-left: 15px; /* Add a small margin from the edge */
+}
+
+header .logo img {
+    height: 120px; /* Adjust logo size */
+    width: auto; /* Maintain aspect ratio */
+    display: block; /* Prevent extra spacing from inline-block behavior */
+}
+
+
+/* Center the navigation menu */
+nav {
+    flex-grow: 1; /* Allows nav to take the remaining space */
+    display: flex;
+    justify-content: center; /* Ensures the menu is centered */
+}
+
+nav .menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px 10px;
+    display: block;
+}
+
+.menu a:hover {
+    color: #AC001E;
+}
+
+/* Right-aligned user profile */
+.user-profile {
+    margin-left: auto; /* Pushes the user profile to the right */
+}
+
+.user-profile a {
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.user-profile a:hover {
+    color: #AC001E;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    width: 170px;
+}
+
+.dropdown-menu li a {
+    padding: 10px;
+    color: black;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.header-user-info {
+    display: flex;
+    align-items: center;
+}
+
+.header-user-info img.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+/* Product Cards Container */
+.product-cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Ensures 4 cards per row */
+    gap: 20px; /* Adjust spacing between cards */
+    padding: 20px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .product-cards-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 cards per row for smaller screens */
+    }
+}
+
+@media (max-width: 900px) {
+    .product-cards-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row for even smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .product-cards-container {
+        grid-template-columns: 1fr; /* 1 card per row for mobile screens */
+    }
+}
+
+.product-card .price {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.product-card .original-price {
+    margin-right: 10px;
+}
+
+.product-card .promotion-price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: green;
+}
+
+
+/* Product Card */
+.product-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px; /* Space between cards */
+    width: 100%; /* Ensure the card takes the full width of the grid cell */
+    max-width: 250px; /* Limit the maximum width */
+    height: auto; /* Allow height to adjust based on content */
+}
+
+/* Card Hover Effect */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 150px; /* Adjust the image height */
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    font-size: 1.2rem; /* Smaller font */
+    margin: 8px 0;
+    font-weight: 600;
+    color: #333;
+}
+
+.product-card p {
+    font-size: 1rem; /* Reduced font size */
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.product-card a {
+    display: inline-block;
+    background-color: #EE798A;
+    color: white;
+    padding: 8px 18px; /* Smaller padding */
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+}
+
+.product-card a:hover {
+    background-color: #AC001E;
+    transform: translateY(-3px);
+}
+
+.product-card a:active {
+    transform: translateY(2px);
+}
+
+
+
+/* Footer Styles */
+footer {
+    display: flex;
+    gap: 70px; /* Control the gap between the columns */
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    justify-content: flex-start; /* Align columns to the left */
+    position: relative;
+}
+
+/* Footer columns */
+.footer-column {
+    text-align: left; /* Align text to the left */
+    padding: 0 10px;
+}
+
+.footer-column img {
+    width: 100px;
+    height: 100px;
+}
+
+.footer-column h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.footer-column a {
+    color: white;
+    display: block;
+    margin: 5px 0; /* Reduced margin between links */
+    font-size: 12px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
