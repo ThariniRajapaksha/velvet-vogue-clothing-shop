@@ -30,11 +30,3 @@ Navigate to the project folder in your browser (http://localhost/velvet-vogue-cl
 
 Contributing
 Feel free to fork the repository, submit issues, and send pull requests. Contributions are welcome!
-
-
-### Instructions:
-- Replace `your-username` with your actual GitHub username.
-- You can customize the details under "Features" and "Technologies Used" if your project has additional functionalities.
-- Add a `LICENSE` file if you want to specify a license for the project.
-
-Let me know if you need more details or adjustments!
