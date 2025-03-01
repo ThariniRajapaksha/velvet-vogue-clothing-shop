@@ -31,12 +31,6 @@ Navigate to the project folder in your browser (http://localhost/velvet-vogue-cl
 Contributing
 Feel free to fork the repository, submit issues, and send pull requests. Contributions are welcome!
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-markdown
-Copy
-Edit
 
 ### Instructions:
 - Replace `your-username` with your actual GitHub username.
